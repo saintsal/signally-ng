@@ -28,11 +28,15 @@
     $(document).ready(function(){
       
       $('div#phrase').tagautocomplete({
-        source: ['#obstacle','#solution','#goal','#measure','#request'],
+        source: ['#obstacle','#action','#goal','#measure','#request'],
         character: '#'
       });
-      $('div#phrase').first().focus();
+    $('div#phrase').first().focus();
       });
+  function addText (text) {
+        $('#phrase').append(text);
+    $('div#phrase').first().focus();
+    };
 
     </script>
     <script type="text/javascript" src="app.js"></script>
@@ -41,6 +45,9 @@
 <form id="phraseform" novalidate ng-controller="SignalController as signalCtrl" ng-submit="signalCtrl.addSignal(signal)">
 
 <div contenteditable strip-br="true" id="phrase" ng-model="signalCtrl.signal.phrase" required></div>
+<button type="button" onclick="addText(' #obstacle')">#obstacle</button>
+<button type="button" onclick="addText(' #goal')">#goal</button>
+<button type="button" onclick="addText(' #action')">#action</button>
 <input type="submit" hidden>
 </form>
 <div ng-repeat="signal in appCtrl.signals | reverse">
