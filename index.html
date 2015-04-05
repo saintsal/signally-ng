@@ -41,10 +41,7 @@
 <form id="phraseform" novalidate ng-controller="SignalController as signalCtrl" ng-submit="signalCtrl.addSignal(signal)">
 
 <div contenteditable strip-br="true" id="phrase" ng-model="signalCtrl.signal.phrase" required></div>
-<input ng-model="signalCtrl.signal.phrase" required></div>
-<input type="submit">
-<div>{{signalCtrl.signal.$valid}}</div>
-<div>{{signalCtrl.signal.phrase}}</div>
+<input type="submit" hidden>
 </form>
 <div ng-repeat="signal in appCtrl.signals | reverse">
 <div>{{signal.phrase}}</div>
