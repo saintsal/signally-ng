@@ -7,7 +7,6 @@ app.filter('reverse', function() {
     };
 });
 
-
 app.controller('AppController', function() {
     this.signals = signals;
 });
@@ -17,9 +16,17 @@ app.controller('SignalController', function() {
     this.addSignal = function(signal) {
         var phrase = this.signal.phrase;
         //TODO: This secure?
-        this.signal.phrase = phrase.replace(/<(?:.|\n)*?>/gm, '');
-        signals.push(this.signal);
-        this.signal = [];
+        console.log(phrase);
+        phrase = phrase.replace(/<(?:.|\n)*?>/gm, '');
+        this.signal.phrase = phrase;
+        var signal = {
+            person: this.signal.person,
+            topic: this.signal.topic,
+            phrase: phrase
+        }
+        console.log(signal);
+        signals.push(signal);
+        this.signal.phrase = "";
     };
 });
 

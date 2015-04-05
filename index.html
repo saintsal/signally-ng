@@ -45,6 +45,7 @@
 <body ng-controller="AppController as appCtrl">
 <form id="phraseform" novalidate ng-controller="SignalController as signalCtrl" ng-submit="signalCtrl.addSignal(signal)">
 
+<h1>Talking to <input ng-model="signalCtrl.signal.person"> about <input ng-model="signalCtrl.signal.topic">
 <div contenteditable strip-br="true" id="phrase" ng-model="signalCtrl.signal.phrase" required></div>
 <button type="button" onclick="addText(' #obstacle')">#obstacle</button>
 <button type="button" onclick="addText(' #goal')">#goal</button>
