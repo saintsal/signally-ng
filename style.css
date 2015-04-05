@@ -5,3 +5,84 @@ min-height: 50px;
 padding: 2px;
 width: 100%;
 }
+
+body {
+  font-family: Sans;
+  background-image: url(http://subtlepatterns.com/patterns/wet_snow.png);
+}
+
+.phrases {
+  position: relative;
+}
+.phrases li {
+  clear: left;
+  float: left;
+  display: inline-block;
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius:4px;
+  list-style-type: none;
+  margin: 7px;
+  padding: 5px 10px 5px 10px;
+  background: #fbfffb;
+  text-align: right;
+}
+
+.phrases li:before{
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg); /* IE 9 */
+  -webkit-transform: rotate(225deg); /* Safari and Chrome */
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  left: -7px;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid #aaa;
+  border-top: 1px solid #aaa;
+  z-index: 0;
+  background: #fbfffb;
+}
+
+#phrase {
+  height: 50px;
+  background: #fff;
+  width: 100%;
+}
+
+.phrase input {
+  width: 100%;
+  border: 0px;  
+    color:#3c3c3c;
+    font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width:100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  border: 3px solid rgba(0,0,0,0);
+}
+
+.phrase input:focus{
+    background: #fff;
+    box-shadow: 0;
+    border: 3px solid #3498db;
+    color: #3498db;
+    outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+.focused{
+    color:#30aed6;
+    border:#30aed6 solid 3px;
+}
+
+

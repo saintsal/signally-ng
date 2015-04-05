@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="style.css">
 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
@@ -50,8 +51,8 @@
 <button type="button" onclick="addText(' #action')">#action</button>
 <input type="submit" hidden>
 </form>
-<div ng-repeat="signal in appCtrl.signals | reverse">
-<div>{{signal.phrase}}</div>
+<div class="phrases" ng-repeat="signal in appCtrl.signals | reverse">
+<li>{{signal.phrase}}</li>
 </div>
 
 </body>
