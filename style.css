@@ -8,6 +8,7 @@ width: 100%;
 
 body {
   font-family: Sans;
+  font-size: 20pt;
   background-image: url(http://subtlepatterns.com/patterns/wet_snow.png);
 }
 
@@ -57,7 +58,7 @@ body {
     color:#3c3c3c;
     font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
-    font-size: 18px;
+    font-size: 56px;
     border-radius: 0;
     line-height: 22px;
     background-color: #fbfbfb;
