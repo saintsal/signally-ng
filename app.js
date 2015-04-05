@@ -15,6 +15,9 @@ app.controller('AppController', function() {
 app.controller('SignalController', function() {
     this.signal = {};
     this.addSignal = function(signal) {
+        var phrase = this.signal.phrase;
+        //TODO: This secure?
+        this.signal.phrase = phrase.replace(/<(?:.|\n)*?>/gm, '');
         signals.push(this.signal);
         this.signal = [];
     };
@@ -41,11 +44,6 @@ app.directive('contenteditable', ['$sce', function($sce) {
 
         // Listen for change events to enable binding
         element.on('blur keyup change', function() {
-          // If strip-br attribute is provided then we strip this out
-           ( attrs.stripBr && html == '<br>' ) {
-          element.html($sce.getTrustedHtml(ngModel.$viewValue || ''));
-
-          }
           scope.$evalAsync(read);
         });
         element.on('keydown',function (event) {
