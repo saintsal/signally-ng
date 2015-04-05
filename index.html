@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="signally">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script> 
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">
+</script>
+
+
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-sanitize.js"></script>
+    <script src="js/deps/bootstrap-typeahead.js"></script>
+    <script src="js/deps/rangy-core.js"></script>
+    <script src="js/deps/caret-position.js"></script>
+    <script src="js/bootstrap-tagautocomplete.js"></script>
+    <script>
+    $(document).ready(function(){
+      
+      $('div#phrase').tagautocomplete({
+        source: ['#obstacle','#solution','#goal','#measure','#request'],
+        character: '#'
+      });
+      $('div#phrase').first().focus();
+      });
+
+    </script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="AppController as appCtrl">
+<form id="phraseform" novalidate ng-controller="SignalController as signalCtrl" ng-submit="signalCtrl.addSignal(signal)">
+
+<div contenteditable strip-br="true" id="phrase" ng-model="signalCtrl.signal.phrase" required></div>
+<input ng-model="signalCtrl.signal.phrase" required></div>
+<input type="submit">
+<div>{{signalCtrl.signal.$valid}}</div>
+<div>{{signalCtrl.signal.phrase}}</div>
+</form>
+<div ng-repeat="signal in appCtrl.signals | reverse">
+<div>{{signal.phrase}}</div>
+</div>
+
+</body>
+</html>
